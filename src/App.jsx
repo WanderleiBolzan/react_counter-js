@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// Assuming App.scss is handled by the build system and correctly applies styles.
+// Assumindo que App.scss é tratado pelo sistema de build e aplica os estilos corretamente.
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -13,62 +13,63 @@ export default function App() {
 
   const increase = () => {
     if (count % 5 === 0) {
-      add100(); // Adiciona 100 se a contagem for divisível por 5
+      add100();
     } else {
-      addOne(); // Adiciona 1 caso contrário
+      addOne();
     }
   };
 
   return (
     <div
       className="flex flex-col items-center
-      justify-center min-h-screen
-      bg-gray-100 font-sans p-4"
+      justify-center min-h-screen bg-gray-100 font-sans p-4"
     >
+      {/* Exibe o valor atual da contagem */}
       <h1
         className="text-4xl font-bold text-gray-800
         mb-8 rounded-lg p-4 bg-white shadow-md"
       >
-        Count: {count}
+        Contagem: {count}
       </h1>
 
       <div
         className="flex flex-col space-y-4
         md:flex-row md:space-y-0 md:space-x-4"
       >
+        {/* Botão para adicionar 1 */}
         <button
           type="button"
           className="bg-blue-500 hover:bg-blue-700
-          text-white font-bold py-3 px-6
-          rounded-lg shadow-md transition duration-300
+          text-white font-bold py-3 px-6 rounded-lg
+          shadow-md transition duration-300
           ease-in-out transform hover:scale-105"
           onClick={addOne}
         >
-          Add 1
+          Adicionar 1
         </button>
 
+        {/* Botão para adicionar 100 */}
         <button
           type="button"
           className="bg-green-500 hover:bg-green-700
-          text-white font-bold py-3 px-6
-          rounded-lg shadow-md
-          transition duration-300
-          ease-in-out transform
-          hover:scale-105"
+          text-white font-bold py-3 px-6 rounded-lg
+          shadow-md transition duration-300
+          ease-in-out transform hover:scale-105"
           onClick={add100}
         >
-          Add 100
+          Adicionar 100
         </button>
 
+        {/* Botão "Increase" com a lógica condicional */}
         <button
           type="button"
           className="bg-purple-500 hover:bg-purple-700
-          text-white font-bold py-3
-          px-6 rounded-lg shadow-md
-          transition duration-300 ease-in-out transform hover:scale-105"
+          text-white font-bold py-3 px-6
+          rounded-lg shadow-md transition duration-300
+          ease-in-out transform hover:scale-105"
           onClick={increase}
         >
-          Increase
+          Aumentar
         </button>
       </div>
     </div>
